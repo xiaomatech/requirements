@@ -13,39 +13,25 @@ from multiprocessing.dummy import Pool as ThreadPool
 CONST_SWITCH_H3C_TYPE = 1
 CONST_SWITCH_CISCO_TYPE = 2
 CONST_HTTP_PORT = 8001
-CONST_SWITCH_CONFIG = {
-    'port':22,
-    'user':'',
-    'password':''
-}
+CONST_SWITCH_CONFIG = {'port': 22, 'user': '', 'password': ''}
+
 CONST_LOG_FILE = './switch.log'
 
 logger = logging.getLogger('switch')
 logger.setLevel(logging.DEBUG)
-handler = logging.handlers.RotatingFileHandler(CONST_LOG_FILE,
-                                               mode='a+',
-                                               maxBytes=1073741824,#1G
-                                               backupCount=5)
-handler.setFormatter(logging.Formatter(
-    '%(asctime)s %(levelname)-8s[%(filename)s:%(lineno)d(%(funcName)s)] %(message)s'))
+handler = logging.handlers.RotatingFileHandler(
+    CONST_LOG_FILE,
+    mode='a+',
+    maxBytes=1073741824,  #1G
+    backupCount=5)
+handler.setFormatter(
+    logging.Formatter(
+        '%(asctime)s %(levelname)-8s[%(filename)s:%(lineno)d(%(funcName)s)] %(message)s'
+    ))
 logger.addHandler(handler)
 
 pool = ThreadPool(32)
 
-
-class PowerExpection(Exception):
-    """A power error occurred.
-
-    Catching this error will catch both
-    :exc:`~lib_except.PowerRestartError` and
-    :exc:`~lib_except.PxeRestartError` .
-    """
-
-class PowerRestartError(PowerExpection):
-    """A error occurred while restart the machine."""
-
-class PxeRestartError(PowerExpection):
-    """A error occurred while restart the machine from pxe. """
 
 class SwitchExpection(Exception):
     """A switch operate error occurred."""
@@ -54,14 +40,16 @@ class SwitchExpection(Exception):
 class SwitchLoginError(SwitchExpection):
     """A error occurred while login on to a switch."""
 
+
 class SwitchUnImplementMethod(SwitchExpection):
     """A error occurred while call an funtion on switch object."""
+
 
 class SwitchBase(object):
     def __init__(self, *args, **kwargs):
         self.host = kwargs['host']
         self.prompt = kwargs.get('prompt', '#>]')
-        self.op_stat = True #操作状态
+        self.op_stat = True  #操作状态
         self.client = None
         self.timeout = 60
         pass
@@ -70,17 +58,23 @@ class SwitchBase(object):
         self.quit()
 
     def _login(self, host, port, user, password, expect, login_expect=None):
-        client = pexpect.spawn("ssh %s@%s -p %s" % (user, host, port), echo=False)
-        ret = client.expect([pexpect.TIMEOUT, pexpect.EOF, expect, '\(yes/no\)\?'], timeout=self.timeout)
+        client = pexpect.spawn(
+            "ssh %s@%s -p %s" % (user, host, port), echo=False)
+        ret = client.expect(
+            [pexpect.TIMEOUT, pexpect.EOF, expect, '\(yes/no\)\?'],
+            timeout=self.timeout)
         logger.info(client.before + str(client.after))
 
         if ret == 3:
             client.sendline('yes')
-            ret = client.expect([pexpect.TIMEOUT, pexpect.EOF, expect], timeout=self.timeout)
+            ret = client.expect(
+                [pexpect.TIMEOUT, pexpect.EOF, expect], timeout=self.timeout)
         if ret == 2:
             client.sendline(str(password))
             login_expect = login_expect if login_expect else self.prompt
-            ret = client.expect([pexpect.TIMEOUT, pexpect.EOF, login_expect], timeout=self.timeout)
+            ret = client.expect(
+                [pexpect.TIMEOUT, pexpect.EOF, login_expect],
+                timeout=self.timeout)
             logger.info(client.before + str(client.after))
             if ret == 2:
                 self.client = client
@@ -90,7 +84,7 @@ class SwitchBase(object):
     def enter_port(self, portname):
         return self.exec_cmd("interface %s" % (portname))
 
-    def exec_cmd(self, cmd, expect=None,result=True):
+    def exec_cmd(self, cmd, expect=None, result=True):
         if not self.client:
             msg = "exec cmd , but not login. Please login in switch first..."
             logger.error(msg)
@@ -100,16 +94,18 @@ class SwitchBase(object):
             expect = self.prompt
 
         self.client.sendline(cmd)
-        ret = self.client.expect([pexpect.TIMEOUT, pexpect.EOF, expect], timeout=self.timeout)
+        ret = self.client.expect(
+            [pexpect.TIMEOUT, pexpect.EOF, expect], timeout=self.timeout)
         content = self.client.before + str(self.client.after)
-        logger.info('执行命令 %s , 返回结果 %s' % (cmd,content) )
+        logger.info('执行命令 %s , 返回结果 %s' % (cmd, content))
         if ret == 2:
             if result:
                 return content
             else:
                 return True
         else:
-            msg = '执行命令出错:\'%s\' \n 期望返回结果包含:\'%s\'\n 实际输出:\'%s\' ' % (cmd, expect, content)
+            msg = '执行命令出错:\'%s\' \n 期望返回结果包含:\'%s\'\n 实际输出:\'%s\' ' % (
+                cmd, expect, content)
             logger.error(msg)
             raise SwitchExpection(msg)
 
@@ -214,14 +210,16 @@ class SwitchH3C(SwitchBase):
         :return:
         """
         self.op_stat = self.op_stat and self.exec_cmd("save", "\[Y/N\]:")
-        self.op_stat = self.op_stat and self.exec_cmd("y", "press the enter key\):")
+        self.op_stat = self.op_stat and self.exec_cmd("y",
+                                                      "press the enter key\):")
         self.op_stat = self.op_stat and self.exec_cmd("\n", "\[Y/N\]:")
         self.op_stat = self.op_stat and self.exec_cmd("y", "successfully.")
         return self.op_stat
 
     def set_port_access(self, portname, vlanid):
         self.op_stat = self.op_stat and self.enter_port(portname)
-        self.op_stat = self.op_stat and self.exec_cmd('port access vlan %s' % (vlanid))
+        self.op_stat = self.op_stat and self.exec_cmd('port access vlan %s' %
+                                                      (vlanid))
         self.op_stat = self.op_stat and self.exec_cmd('stp edged-port')
         self.op_stat = self.op_stat and self.exec_cmd('undo shutdown')
         self.op_stat = self.op_stat and self.exec_cmd('description TO Server')
@@ -232,8 +230,10 @@ class SwitchH3C(SwitchBase):
         self.op_stat = self.op_stat and self.enter_port(portname)
         self.op_stat = self.op_stat and self.exec_cmd('port link-type trunk')
         self.op_stat = self.op_stat and self.exec_cmd('stp edged-port')
-        self.op_stat = self.op_stat and self.exec_cmd('port trunk permit vlan 2 to 2999 3001 to 4094')
-        self.op_stat = self.op_stat and self.exec_cmd('undo port trunk permit vlan 1')
+        self.op_stat = self.op_stat and self.exec_cmd(
+            'port trunk permit vlan 2 to 2999 3001 to 4094')
+        self.op_stat = self.op_stat and self.exec_cmd(
+            'undo port trunk permit vlan 1')
         self.op_stat = self.op_stat and self.exec_cmd('undo shutdown')
         self.op_stat = self.op_stat and self.exec_cmd('description TO Server')
         self.op_stat = self.op_stat and self.save()
@@ -258,12 +258,14 @@ class SwitchCiscoNexus(SwitchCisco):
 
     def save(self):
         self.op_stat = self.op_stat and self.exec_cmd(
-            "copy running-config startup-config", "Copy complete, now saving to disk")
+            "copy running-config startup-config",
+            "Copy complete, now saving to disk")
         return self.op_stat
 
     def set_port_access(self, portname, vlanid):
         self.op_stat = self.op_stat and self.enter_port(portname)
-        self.op_stat = self.op_stat and self.exec_cmd('switchport access vlan %s' % (vlanid))
+        self.op_stat = self.op_stat and self.exec_cmd(
+            'switchport access vlan %s' % (vlanid))
         self.op_stat = self.op_stat and self.exec_cmd('no shutdown')
         self.op_stat = self.op_stat and self.exec_cmd('description TO Server')
         self.op_stat = self.op_stat and self.save()
@@ -271,10 +273,12 @@ class SwitchCiscoNexus(SwitchCisco):
 
     def set_port_trunk(self, portname):
         self.op_stat = self.op_stat and self.enter_port(portname)
-        self.op_stat = self.op_stat and self.exec_cmd('no switchport access vlan 999')
+        self.op_stat = self.op_stat and self.exec_cmd(
+            'no switchport access vlan 999')
         self.op_stat = self.op_stat and self.exec_cmd('switchport mode trunk')
         self.op_stat = self.op_stat and self.exec_cmd(
-            'switchport trunk allowed vlan 100-103,111-118,121-124,131-132,135-166,999')
+            'switchport trunk allowed vlan 100-103,111-118,121-124,131-132,135-166,999'
+        )
         self.op_stat = self.op_stat and self.exec_cmd('no shutdown')
         self.op_stat = self.op_stat and self.exec_cmd('description TO Server')
         self.op_stat = self.op_stat and self.save()
@@ -314,7 +318,8 @@ class SwitchCiscoCatalyst(SwitchCisco):
 
     def set_port_access(self, portname, vlanid):
         self.op_stat = self.op_stat and self.enter_port(portname)
-        self.op_stat = self.op_stat and self.exec_cmd('switchport access vlan %s' % (vlanid))
+        self.op_stat = self.op_stat and self.exec_cmd(
+            'switchport access vlan %s' % (vlanid))
         self.op_stat = self.op_stat and self.exec_cmd('switchport mode access')
         self.op_stat = self.op_stat and self.exec_cmd('no shutdown')
         self.op_stat = self.op_stat and self.exec_cmd('description TO Server')
@@ -330,7 +335,6 @@ class SwitchMgr(object):
         'C3048': SwitchCiscoNexus,
         'C3064': SwitchCiscoNexus,
         'C2960': SwitchCiscoCatalyst,
-
         'H1650': SwitchH3C,
         'H3100': SwitchH3C,
         'H3110': SwitchH3C,
@@ -341,13 +345,20 @@ class SwitchMgr(object):
     }
 
     def __init__(self, host, switch_type):
-        logger.info("create switch manager by host:%s and switch_type:%s" % (host, switch_type))
+        logger.info("create switch manager by host:%s and switch_type:%s" %
+                    (host, switch_type))
         self.host = host
-        self.cls = self.SWITCH_TYPE_TO_CLASS[switch_type]
+        try:
+            self.cls = self.SWITCH_TYPE_TO_CLASS[switch_type]
+        except Exception as err:
+            msg = '没有找到对应型号的交换机 请配置 SWITCH_TYPE_TO_CLASS 后 再使用 %s' % str(err)
+            logger.error(msg)
+            raise SwitchExpection(msg)
 
     def switch_obj(self):
-        return self.cls(host=self.host, port=CONST_SWITCH_CONFIG['port'],
-                        user=CONST_SWITCH_CONFIG['user'], password=CONST_SWITCH_CONFIG['password'])
+        switch_config = CONST_SWITCH_CONFIG.copy()
+        switch_config.update({'host': self.host})
+        return self.cls(switch_config)
 
     def get_port_prop(self, portname):
         return self.switch_obj().show_vlan_prop(portname)
@@ -372,22 +383,23 @@ class SwitchMgr(object):
             logger.error("unkown port type:%s" % (port_type))
             return False
 
-
     def shutdown(self, portname):
         return self.switch_obj().shutdown(portname)
 
     def unshutdown(self, portname):
         return self.switch_obj().unshutdown(portname)
 
-def do_task(switch_ip,switch_type,command):
-    switch_config = CONST_SWITCH_CONFIG
-    switch_config['host'] = switch_ip
+
+def do_task(ip, switch_type, command):
+    switch_config = CONST_SWITCH_CONFIG.copy()
+    switch_config.update({'host': ip})
     if switch_type == 'h3c':
         netdev = SwitchH3C(switch_config)
-    elif switch_type == 'cisco_nexus':
+    elif switch_type == 'nexus':
         netdev = SwitchCiscoNexus(switch_config)
-    elif switch_type == 'cisco_catalyst':
+    elif switch_type == 'catalyst':
         netdev = SwitchCiscoCatalyst(switch_config)
+
     try:
         result = netdev.exec_cmd(command, netdev.prompt)
     except SwitchExpection as err:
@@ -397,9 +409,11 @@ def do_task(switch_ip,switch_type,command):
         netdev.quit()
     return result
 
+
 #todo 权限控制
 def check_access(post_data):
     return True
+
 
 #主函数
 def application(environ, start_response):
@@ -423,40 +437,21 @@ def application(environ, start_response):
     for key in a.keys():
         post_data[key] = a[key].value
     logger.info('POST的内容是 : ip %s , post_data %s ' %
-                 (environ.get('REMOTE_ADRR'), json.dumps(post_data)))
+                (environ.get('REMOTE_ADRR'), json.dumps(post_data)))
 
     if not check_access(post_data):
-        return json.dumps({
-            'code': 403,
-            'message':
-                '没权限',
-            'data':''
-        })
+        return json.dumps({'code': 403, 'message': '没权限', 'data': ''})
     else:
         switch_ip = post_data.get('ip')
         switch_type = post_data.get('switch_type')
         command = post_data.get('command')
         if not switch_ip or not switch_type or not command:
-            return json.dumps({
-                'code': 500,
-                'message':
-                    '参数不对',
-                'data':''
-            })
-        result = pool.apply(do_task,kwds=post_data)
+            return json.dumps({'code': 500, 'message': '参数不对', 'data': ''})
+        result = pool.apply(do_task, kwds=post_data)
         pool.join()
-        return json.dumps({
-            'code': 200,
-            'message':
-                '执行成功',
-            'data':result
-        })
+        return json.dumps({'code': 200, 'message': '执行成功', 'data': result})
 
 
 if __name__ == '__main__':
-    http_server = make_server(
-        '',
-        CONST_HTTP_PORT,
-        application
-    )
+    http_server = make_server('', CONST_HTTP_PORT, application)
     http_server.serve_forever()
