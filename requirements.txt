@@ -136,7 +136,7 @@ jieba
 boto
 pika
 nltk
-airflow[rabbitmq,mysql,hive,hdfs,celery]
+airflow[mysql,hive,hdfs,celery,druid,async,kerberos,ldap]
 luigi
 h5py
 pyhive
