@@ -137,7 +137,6 @@ boto
 pika
 nltk
 airflow[mysql,hive,hdfs,celery,druid,async,kerberos,ldap]
-luigi
 h5py
 pyhive
 impyla
