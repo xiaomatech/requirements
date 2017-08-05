@@ -176,6 +176,8 @@ word2vec
 lda2vec
 lda
 xgboost
+wabbit_wappa
+annoy
 mrjob
 fastFM
 pywFM
