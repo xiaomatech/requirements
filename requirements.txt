@@ -58,6 +58,7 @@ pytesseract
 pandas
 pillow
 logbook
+flask
 celery[librabbitmq,redis,msgpack]
 flower
 rq
