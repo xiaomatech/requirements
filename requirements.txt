@@ -1,3 +1,4 @@
+pyformance
 etcd3
 etcdb
 prometheus_client
