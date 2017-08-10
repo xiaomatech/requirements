@@ -185,7 +185,6 @@ pywFM
 gym
 pyarrow
 plyvel
--e git://github.com/yelp/mysql_streamer.git
 -e git://github.com/baidu/CUP.git
 spacy
 IPy
@@ -202,3 +201,5 @@ pykerberos
 requests-kerberos
 thrift_sasl
 bcrypt
+distributed
+dask
