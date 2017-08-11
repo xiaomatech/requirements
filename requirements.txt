@@ -61,6 +61,11 @@ pandas
 pillow
 logbook
 flask
+Flask-SQLAlchemy
+flask-login
+Flask-OAuthlib
+Flask-SSE
+Flask-Migrate
 celery[librabbitmq,redis,msgpack]
 flower
 scrapy
