@@ -63,6 +63,7 @@ logbook
 flask
 celery[librabbitmq,redis,msgpack]
 flower
+scrapy
 rq
 redis
 redis-py-cluster
