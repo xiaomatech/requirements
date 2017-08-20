@@ -68,6 +68,9 @@ Flask-OAuthlib
 Flask-SSE
 Flask-Migrate
 flask-login
+Flask-Script
+Flask-WTF
+Flask-Admin
 celery[librabbitmq,redis,msgpack]
 flower
 scrapy
