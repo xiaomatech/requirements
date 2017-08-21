@@ -40,7 +40,6 @@ pyga
 python-googleanalytics
 pybloom
 transitions
-state_machine
 gitpython
 svn
 mysql-replication
