@@ -20,7 +20,7 @@ ecdsa
 py_zipkin
 pyparsing
 sqlparse
-pykube
+kubernetes
 fn
 cerberus
 envoy
