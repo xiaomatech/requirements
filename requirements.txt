@@ -161,7 +161,6 @@ parquet
 happybase
 avro
 data_pipeline_avro_util
-json2avro
 avro_json_serializer
 impyla
 kudu-python
