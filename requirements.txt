@@ -1,3 +1,6 @@
+forklift
+
+pyspark
 pysolr
 PySyncObj
 raftos
