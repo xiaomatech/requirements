@@ -185,6 +185,8 @@ arch
 statsmodels
 zipline
 scikit-learn
+scikit-surprise
+scikit-image
 tensorflow
 mxnet
 minpy
