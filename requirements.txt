@@ -1,3 +1,4 @@
+structlog
 opentsdb-py
 apache-beam
 tensorframes
