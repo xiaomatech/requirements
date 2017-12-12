@@ -1,3 +1,4 @@
+pyroaring
 roaringbitmap
 structlog
 opentsdb-py
