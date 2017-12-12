@@ -1,3 +1,4 @@
+roaringbitmap
 structlog
 opentsdb-py
 apache-beam
