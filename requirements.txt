@@ -74,6 +74,7 @@ pandas
 pillow
 logbook
 flask
+Flask-RESTful
 Flask-SQLAlchemy
 Flask-SQLAlchemy-Cache
 Flask-Caching
