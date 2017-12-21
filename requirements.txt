@@ -150,6 +150,7 @@ retrying
 pymemcache
 thrift-tools
 cachetools
+tache
 kafka-tools
 kafka-utils
 yapf
