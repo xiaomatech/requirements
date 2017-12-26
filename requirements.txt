@@ -1,4 +1,7 @@
-antlr4-python3-runtime
+crate
+flask_prometheus
+django-prometheus
+prometheus_client
 pyroaring
 roaringbitmap
 structlog
@@ -16,7 +19,6 @@ grafanalib
 pyformance
 etcd3
 etcdb
-prometheus_client
 functools32
 crontab
 Cython
