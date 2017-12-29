@@ -1,6 +1,9 @@
 crate
 flask_prometheus
 django-prometheus
+django-extensions
+django-celery
+djangorestframework
 prometheus_client
 pyroaring
 roaringbitmap
