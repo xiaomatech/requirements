@@ -1,5 +1,6 @@
 crate
 flask_prometheus
+Flask-Celery-Helper
 django-prometheus
 django-extensions
 django-celery
