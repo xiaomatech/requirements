@@ -169,7 +169,8 @@ python-dateutil
 pillow
 pytesseract
 python-etcd
-youtube_dl
+youtube-dl
+you-get
 jieba
 boto
 pika
