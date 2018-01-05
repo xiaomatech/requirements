@@ -86,6 +86,7 @@ Flask-RESTful
 Flask-SQLAlchemy
 Flask-SQLAlchemy-Cache
 Flask-Caching
+Flask-Cache
 Flask-OAuthlib
 Flask-SSE
 Flask-Migrate
