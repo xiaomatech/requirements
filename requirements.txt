@@ -52,8 +52,7 @@ fuzzywuzzy
 user_agents
 glog
 python-gflags
-elastalert
-elasticsearch
+elasticsearch-dsl
 rtmbot
 googleads
 facebookads
