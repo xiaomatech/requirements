@@ -204,6 +204,8 @@ scikit-learn
 scikit-surprise
 scikit-image
 tensorflow
+tensorflow-gpu
+tensorflow-serving-api
 mxnet
 minpy
 keras
