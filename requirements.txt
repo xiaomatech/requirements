@@ -139,7 +139,6 @@ netmiko
 ncclient
 exabgp
 pyangbind
-ryu
 html5lib
 socialoauth
 weibo
@@ -176,6 +175,7 @@ pika
 nltk
 airflow[mysql,hive,hdfs,celery,druid,async,kerberos,ldap]
 h5py
+kylinpy
 pyhive
 impyla
 pydruid[async, pandas]
