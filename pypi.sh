@@ -13,7 +13,7 @@ trusted-host=mirrors.aliyun.com
 
 wget https://raw.githubusercontent.com/xiaomatech/requirements/master/requirements.txt -O /tmp/requirements.txt
 
-for package in `cat /tmp/requirements.txt`;do pip2tgz /data/cobbler/pypi $package;done
+cat /tmp/requirements.txt | xargs -n 1 pip2tgz /data/cobbler/pypi
 
 dir2pi /data/cobbler/pypi
 
