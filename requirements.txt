@@ -1,3 +1,6 @@
+pycoin
+python-binance-api
+python-binance
 liblinear
 riko
 crate
