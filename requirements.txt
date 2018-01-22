@@ -126,8 +126,6 @@ redis-py-cluster
 rc
 redis-shard
 plan
-falcon
-falconpb
 graceful
 requests
 grpcio
@@ -155,7 +153,6 @@ kafka-python
 msgpack-python
 autojenkins
 artifactory
-peewee
 beautifulsoup4
 pycsco
 pyiosxr
