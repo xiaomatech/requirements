@@ -1,3 +1,6 @@
+vnpy
+coinmarketcap
+algocoin
 pycoin
 python-binance-api
 python-binance
@@ -147,6 +150,7 @@ algorithms
 schedule
 xmltodict
 tushare
+TA-Lib
 fabric
 fabric-gunicorn
 kafka-python
@@ -165,6 +169,7 @@ socialoauth
 weibo
 itchat
 itchatmp
+wxpy
 alipay
 paypal
 upyun
@@ -224,6 +229,8 @@ zipline
 scikit-learn
 scikit-surprise
 scikit-image
+scikit-keras
+scikit2pmml
 tensorflow
 tensorflow-gpu
 tensorflow-serving-api
@@ -259,7 +266,18 @@ cgroupspy
 ldap3
 pykerberos
 requests-kerberos
+requests-cache
+requests-oauthlib
 thrift_sasl
 bcrypt
 distributed
 dask
+idna
+ecdsa
+pyasn1
+pycparser
+pyOpenSSL
+PyQRCode
+regex
+SQLAlchemy
+websocket-client
