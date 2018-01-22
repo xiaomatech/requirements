@@ -205,7 +205,6 @@ kylinpy
 pyhive
 impyla
 pydruid[async, pandas]
-pykylin
 parquet
 happybase
 avro
