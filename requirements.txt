@@ -1,3 +1,5 @@
+rdbtools
+python-lzf
 vnpy
 coinmarketcap
 algocoin
