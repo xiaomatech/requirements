@@ -7,6 +7,9 @@ pycoin
 python-binance-api
 python-binance
 liblinear
+vowpalwabbit
+svmloader
+Cython
 riko
 crate
 xlsxwriter
