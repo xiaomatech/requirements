@@ -134,6 +134,7 @@ celery[librabbitmq,redis,msgpack]
 flower
 scrapy
 scrapy-redis
+gerapy
 rq
 redis
 redis-py-cluster
