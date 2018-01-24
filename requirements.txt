@@ -258,6 +258,7 @@ word2vec
 lda2vec
 lda
 xgboost
+lightgbm
 wabbit_wappa
 annoy
 mrjob
