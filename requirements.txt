@@ -133,6 +133,7 @@ social-app-flask-sqlalchemy
 celery[librabbitmq,redis,msgpack]
 flower
 scrapy
+scrapy-redis
 rq
 redis
 redis-py-cluster
@@ -164,6 +165,9 @@ TA-Lib
 fabric
 fabric-gunicorn
 kafka-python
+yelp_kafka
+pykafka
+kafka-utils 
 msgpack-python
 autojenkins
 artifactory
