@@ -44,7 +44,6 @@ django-sharding
 django-model-utils
 django-extra-views
 prometheus_client
-pyroaring
 roaringbitmap
 structlog
 opentsdb-py
