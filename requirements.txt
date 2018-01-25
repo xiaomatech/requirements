@@ -23,10 +23,12 @@ django-redis
 django-cache-machine
 django-cachalot
 django-cacheops
+django-redis
 django-crispy-forms
 django-fsm
 django-fsm-log
 django-celery
+django-rq
 django-prometheus
 django-extensions
 djangorestframework
