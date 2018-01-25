@@ -38,6 +38,7 @@ django-anymail
 rest-social-auth
 django-rest-framework-social-oauth2
 django-hashid-field
+django-sharding
 django-model-utils
 django-extra-views
 prometheus_client
@@ -108,7 +109,6 @@ html5lib
 schedule
 lxml
 requests
-gevent
 pytesseract
 pandas
 pillow
@@ -151,10 +151,11 @@ gunicorn_thrift
 grequests
 gsocketpool
 gunicorn
+gevent
 gevent-etcd
 gevent-websocket
 geventconnpool
-geventcron
+gevent-pipeline
 geventhttpclient
 ansible
 pexpect
