@@ -42,6 +42,7 @@ django-rest-framework-social-oauth2
 django-hashid-field
 django-sharding
 django-model-utils
+django-user_agents
 django-extra-views
 prometheus_client
 roaringbitmap
@@ -297,3 +298,5 @@ PyQRCode
 regex
 SQLAlchemy
 websocket-client
+ua-parser
+user-agents
