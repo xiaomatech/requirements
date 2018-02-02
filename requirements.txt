@@ -67,6 +67,7 @@ locustio
 statsd
 PlanOut
 python-ambariclient
+pyipip
 geoip2
 arrow
 bleach
