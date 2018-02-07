@@ -33,6 +33,7 @@ django-prometheus
 django-extensions
 djangorestframework
 djangorestframework-jwt
+djangorestframework-filters
 django-imagekit
 django-log-request-id
 django-celery-email
