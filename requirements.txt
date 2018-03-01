@@ -1,3 +1,4 @@
+google_speech
 hashids
 python-hashes
 sparselsh
