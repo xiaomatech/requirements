@@ -46,6 +46,7 @@ django-model-utils
 django-user_agents
 django-extra-views
 django-zipkin-trace
+django_opentracing
 prometheus_client
 roaringbitmap
 structlog
@@ -69,7 +70,6 @@ Cython
 locustio
 statsd
 PlanOut
-python-ambariclient
 pyipip
 geoip2
 arrow
@@ -124,6 +124,7 @@ Flask-SQLAlchemy-Cache
 Flask-Caching
 Flask-Cache
 flask_zipkin
+Flask-Opentracing
 Flask-OAuthlib
 Flask-SSE
 Flask-Migrate
