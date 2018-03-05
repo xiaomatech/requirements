@@ -45,6 +45,7 @@ django-sharding
 django-model-utils
 django-user_agents
 django-extra-views
+django-zipkin-trace
 prometheus_client
 roaringbitmap
 structlog
@@ -122,6 +123,7 @@ Flask-SQLAlchemy
 Flask-SQLAlchemy-Cache
 Flask-Caching
 Flask-Cache
+flask_zipkin
 Flask-OAuthlib
 Flask-SSE
 Flask-Migrate
