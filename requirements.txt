@@ -235,6 +235,7 @@ avro_json_serializer
 impyla
 kudu-python
 python-logstash
+logstash_formatter
 flumelogger
 smart_open
 snakebite[kerberos]
