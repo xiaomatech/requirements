@@ -1,3 +1,4 @@
+validators
 hashids
 python-hashes
 sparselsh
