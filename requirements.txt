@@ -1,4 +1,5 @@
 validators
+pyfftw
 pyhystrix
 hashids
 python-hashes
