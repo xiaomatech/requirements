@@ -41,6 +41,8 @@ django-imagekit
 django-log-request-id
 django-celery-email
 django-anymail
+social-app-django
+social-auth-storage-sqlalchemy
 rest-social-auth
 django-rest-framework-social-oauth2
 django-hashid-field
