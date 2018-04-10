@@ -52,6 +52,7 @@ django-user_agents
 django-extra-views
 django-zipkin-trace
 django_opentracing
+django-jinja
 prometheus_client
 roaringbitmap
 structlog
