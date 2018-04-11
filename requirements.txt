@@ -49,10 +49,8 @@ django-hashid-field
 django-sharding
 django-model-utils
 django-user_agents
-django-extra-views
 django-zipkin-trace
 django_opentracing
-django-jinja
 prometheus_client
 roaringbitmap
 structlog
@@ -62,6 +60,7 @@ tensorframes
 spark-sklearn
 forklift
 crate
+BigDL
 pyspark
 pysolr
 PySyncObj
