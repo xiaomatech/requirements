@@ -1,4 +1,5 @@
 validators
+blockchain
 pyfftw
 pyhystrix
 hashids
