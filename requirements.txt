@@ -1,4 +1,5 @@
-validators
+seaborn
+pandas_ml
 blockchain
 pyfftw
 pyhystrix
