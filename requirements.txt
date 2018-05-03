@@ -41,6 +41,8 @@ djangorestframework-jwt
 djangorestframework-filters
 django-imagekit
 django-log-request-id
+django-celery-beat
+django-celery-results
 django-celery-email
 django-anymail
 social-auth-app-django
