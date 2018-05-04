@@ -242,7 +242,6 @@ avro
 data_pipeline_avro_util
 avro_json_serializer
 impyla
-kudu-python
 python-logstash
 logstash_formatter
 flumelogger
@@ -280,6 +279,9 @@ wabbit_wappa
 annoy
 mrjob
 fastFM
+fasttext
+spacy
+gensim
 pywFM
 gym
 pyarrow
