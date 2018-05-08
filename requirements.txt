@@ -264,8 +264,6 @@ scikit2pmml
 tensorflow
 tensorflow-gpu
 tensorflow-serving-api
-mxnet
-minpy
 keras
 tensorlayer
 elephas
