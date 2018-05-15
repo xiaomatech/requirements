@@ -1,5 +1,7 @@
+tqdm
+homeassistant
 seaborn
-pandas_ml
+networkx
 blockchain
 pyfftw
 pyhystrix
