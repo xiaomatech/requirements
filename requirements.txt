@@ -203,7 +203,8 @@ weibo
 itchat
 itchatmp
 wxpy
-alipay
+pywxpay
+python-alipay-sdk
 paypal
 upyun
 sevencow
