@@ -1,3 +1,5 @@
+googlemaps
+git+https://github.com/elisong/baidu-maps-services-python
 tqdm
 homeassistant
 seaborn
