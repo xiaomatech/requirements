@@ -107,7 +107,9 @@ googleads
 facebookads
 twitter-ads
 pyga
-python-googleanalytics
+google-api-python-client
+pga
+git+https://github.com/webhue/appannie
 pybloom
 transitions
 gitpython
