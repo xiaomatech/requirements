@@ -113,6 +113,7 @@ pyga
 google-api-python-client
 pga
 git+https://github.com/webhue/appannie
+git+https://github.com/storerjeremy/python-semrush
 pybloom
 transitions
 gitpython
