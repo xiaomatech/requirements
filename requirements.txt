@@ -191,8 +191,8 @@ TA-Lib
 fabric
 fabric-gunicorn
 kafka-python
+confluent-kafka[avro]
 yelp_kafka
-pykafka
 kafka-utils 
 msgpack-python
 autojenkins
