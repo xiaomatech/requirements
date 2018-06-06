@@ -90,6 +90,7 @@ arrow
 bleach
 webargs
 protobuf-to-dict
+secp256k1
 ecdsa
 py_zipkin
 pyparsing
