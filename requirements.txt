@@ -245,7 +245,6 @@ airflow[mysql,hive,hdfs,celery,druid,async,kerberos,ldap]
 h5py
 kylinpy
 pyhive
-impyla
 pydruid[async, pandas]
 parquet
 happybase
@@ -253,6 +252,7 @@ avro
 data_pipeline_avro_util
 avro_json_serializer
 impyla
+joblib
 python-logstash
 logstash_formatter
 flumelogger
