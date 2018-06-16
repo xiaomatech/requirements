@@ -1,3 +1,7 @@
+bounter
+smart_open
+sqlitedict
+SimpleSQLite
 pyreferrer
 googlemaps
 git+https://github.com/elisong/baidu-maps-services-python
