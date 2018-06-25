@@ -288,7 +288,6 @@ lda2vec
 lda
 xgboost
 lightgbm
-xlearn
 wabbit_wappa
 annoy
 mrjob
