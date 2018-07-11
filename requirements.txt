@@ -1,3 +1,5 @@
+jupyterlab
+jupyter_enterprise_gateway
 fire
 bounter
 smart_open
