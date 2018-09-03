@@ -68,6 +68,7 @@ django-model-utils
 django-user_agents
 django-zipkin-trace
 django_opentracing
+django-bootstrap3
 prometheus_client
 roaringbitmap
 structlog
