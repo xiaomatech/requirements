@@ -47,6 +47,7 @@ django-fsm
 django-fsm-log
 django-celery
 django-rq
+django-pandas
 django-prometheus
 django-extensions
 djangorestframework
