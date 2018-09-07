@@ -52,6 +52,8 @@ django-extensions
 djangorestframework
 djangorestframework-jwt
 djangorestframework-filters
+djangorestframework-msgpack
+rest-pandas
 django-imagekit
 django-log-request-id
 django-celery-beat
