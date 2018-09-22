@@ -1,3 +1,4 @@
+atlasclient
 pyeureka
 jupyterlab
 jupyter_enterprise_gateway
