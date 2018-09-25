@@ -1,3 +1,4 @@
+zstandard
 atlasclient
 pyeureka
 jupyterlab
