@@ -1,3 +1,6 @@
+jaeger-client
+opentracing
+
 zstandard
 atlasclient
 pyeureka
