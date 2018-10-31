@@ -260,6 +260,7 @@ jieba
 boto
 pika
 nltk
+hdfs[avro,dataframe,kerberos]
 apache-airflow[mysql,postgres,redis,s3,rabbitmq,ssh,hive,hdfs,celery,druid,async,kerberos,jdbc,ldap]
 h5py
 kylinpy
