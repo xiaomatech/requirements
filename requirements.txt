@@ -1,6 +1,11 @@
 jaeger-client
 opentracing
 
+records[pandas]
+tablib[pandas]
+delegator.py
+maya
+
 zstandard
 atlasclient
 pyeureka
