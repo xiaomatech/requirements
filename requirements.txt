@@ -56,7 +56,7 @@ django-crispy-forms
 django-fsm
 django-fsm-log
 django-celery
-django-rq
+django-tracking2
 django-pandas
 django-prometheus
 django-extensions
