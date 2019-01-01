@@ -305,6 +305,14 @@ tensorflow-data-validation
 tensorflow-model-analysis
 tensorflow-gpu
 tensorflow-serving-api
+tensorflow-probability
+tensorflow-datasets
+tensorflow-ranking
+tensor2tensor
+adanet
+tf-agents
+mesh-tensorflow
+tensorflow-hub
 keras
 tensorlayer
 elephas
