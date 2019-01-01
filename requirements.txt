@@ -9,8 +9,10 @@ maya
 zstandard
 atlasclient
 pyeureka
+jupyter
 jupyterlab
-jupyter_enterprise_gateway
+jupyterhub
+jupyter_contrib_nbextensions
 fire
 bounter
 smart_open
@@ -298,6 +300,9 @@ scikit-image
 scikit-keras
 scikit2pmml
 tensorflow
+tensorflow-transform
+tensorflow-data-validation
+tensorflow-model-analysis
 tensorflow-gpu
 tensorflow-serving-api
 keras
