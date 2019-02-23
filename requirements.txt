@@ -273,7 +273,7 @@ h5py
 kylinpy
 presto-python-client
 pyhive
-pydruid[async, pandas]
+pydruid[async, pandas,sqlalchemy]
 parquet
 happybase
 avro
@@ -360,7 +360,8 @@ pycparser
 pyOpenSSL
 PyQRCode
 regex
-SQLAlchemy
+sqlalchemy
+sqlalchemy-clickhouse
 websocket-client
 ua-parser
 user-agents
