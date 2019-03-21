@@ -146,13 +146,12 @@ pybloom
 transitions
 gitpython
 svn
-mysql-replication
 meepo
 pdfminer
 psd-tools
 pymysql
-mysqlclient
 MySQL-python
+mysql-connector-python
 echarts-python
 html5lib
 schedule
