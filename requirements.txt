@@ -1,6 +1,6 @@
 jaeger-client
 opentracing
-
+elastic-apm
 records[pandas]
 tablib[pandas]
 delegator.py
