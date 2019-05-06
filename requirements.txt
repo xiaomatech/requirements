@@ -4,6 +4,8 @@ redisgraph
 redisearch
 rejson
 
+sqlflow
+
 elastic-apm
 records[pandas]
 tablib[pandas]
