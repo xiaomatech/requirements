@@ -1,5 +1,9 @@
 jaeger-client
 opentracing
+redisgraph
+redisearch
+rejson
+
 elastic-apm
 records[pandas]
 tablib[pandas]
