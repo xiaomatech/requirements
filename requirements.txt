@@ -162,7 +162,6 @@ echarts-python
 html5lib
 schedule
 lxml
-requests
 pytesseract
 pandas
 pillow
@@ -198,15 +197,12 @@ rc
 redis-shard
 plan
 graceful
-requests
 grpcio
 DBUtils
 thriftpy
 thrift_connector
 gunicorn_thrift
-grequests
 gsocketpool
-gunicorn
 gevent
 gevent-etcd
 gevent-websocket
@@ -351,6 +347,9 @@ paypalrestsdk
 cgroupspy
 ldap3
 pykerberos
+grequests
+requests
+requests-html
 requests-kerberos
 requests-cache
 requests-oauthlib
