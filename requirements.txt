@@ -4,6 +4,10 @@ redisgraph
 redisearch
 rejson
 
+django-geojson
+geojson
+geopandas
+
 sqlflow
 
 elastic-apm
