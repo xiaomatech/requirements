@@ -6,7 +6,6 @@ redisgraph
 redisearch
 rejson
 
-django-geojson
 geojson
 geopandas
 
@@ -85,6 +84,9 @@ django-celery-beat
 django-celery-results
 django-celery-email
 django-anymail
+django-geojson
+djangorestframework-gis
+
 social-auth-app-django
 social-auth-storage-sqlalchemy
 rest-social-auth
