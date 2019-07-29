@@ -86,7 +86,8 @@ django-celery-email
 django-anymail
 django-geojson
 djangorestframework-gis
-
+django-elasticsearch-dsl-drf
+django-restql
 social-auth-app-django
 social-auth-storage-sqlalchemy
 rest-social-auth
