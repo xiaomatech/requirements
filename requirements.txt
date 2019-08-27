@@ -244,6 +244,7 @@ pyangbind
 html5lib
 socialoauth
 weibo
+python-weixin
 itchat
 itchatmp
 wxpy
