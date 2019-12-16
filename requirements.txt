@@ -1,3 +1,7 @@
+feature_selector
+scorecardpy
+toad
+
 cup
 lightmatchingengine
 metaflow
@@ -7,18 +11,14 @@ opentracing
 redisgraph
 redisearch
 rejson
-
 geojson
 geopandas
-
 sqlflow
-
 elastic-apm
 records[pandas]
 tablib[pandas]
 delegator.py
 maya
-
 zstandard
 atlasclient
 pyeureka
