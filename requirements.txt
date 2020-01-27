@@ -167,7 +167,7 @@ meepo
 pdfminer
 psd-tools
 pymysql
-MySQL-python
+mysqlclient
 mysql-connector-python
 echarts-python
 html5lib
